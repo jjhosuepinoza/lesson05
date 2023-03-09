@@ -1,0 +1,25 @@
+{
+  "contacts": [
+    {
+      "firstName": "Daniela",
+      "lastName": "Rosero",
+      "email": "daniela@test.com",
+      "favoriteColor": "Black",
+      "birthday": "08/10/93"
+    },
+    {
+      "firstName": "Mayra",
+      "lastName": "Yepez",
+      "email": "maya@test.com",
+      "favoriteColor": "Blue",
+      "birthday": "03/09/93"
+    },
+    {
+      "firstName": "Jhosue",
+      "lastName": "Espinoza",
+      "email": "jjhosueC@test.com",
+      "favoriteColor": "Yellow",
+      "birthday": "01/05/96"
+    }
+  ]
+}
