@@ -2,8 +2,8 @@ const swaggerAutogen = require('swagger-autogen')();
 
 const doc = {
   info: {
-    title: 'My API',
-    description: 'My First API'
+    title: 'Oline Course Api',
+    description: 'Students and Teachers Information'
   },
   host: 'lesson05-javier-espinoza.onrender.com',
   schemes: ['https']
