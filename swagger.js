@@ -5,7 +5,7 @@ const doc = {
     title: 'My API',
     description: 'My First API'
   },
-  host: 'lesson04-swagger.onrender.com',
+  host: 'https://lesson05-javier-espinoza.onrender.com/',
   schemes: ['https']
 };
 

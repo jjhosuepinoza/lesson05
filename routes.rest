@@ -84,3 +84,6 @@ content-type: application/json
 
 ### DELETE contact
 DELETE https://lesson05-javier-espinoza.onrender.com/students/641f1844176c3933a021628c
+
+### Get all teachers
+GET http://localhost:5050/teachers
