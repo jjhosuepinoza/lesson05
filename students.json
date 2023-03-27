@@ -1,0 +1,52 @@
+{
+  "student1": {
+    "firstName": "Juan",
+    "lastName": "Espinoza",
+    "age": 20,
+    "emailAddress": "juanespinoza@test.com",
+    "phoneNumber": "+593981234567",
+    "studentStatus": "active",
+    "emergencyName": "María Espinoza",
+    "emergencyPhone": "+593984567890"
+  },
+  "student2": {
+    "firstName": "Ana",
+    "lastName": "Quispe",
+    "age": 22,
+    "emailAddress": "anaquispe@example.com",
+    "phoneNumber": "+593984567890",
+    "studentStatus": "passive",
+    "emergencyName": "José Quispe",
+    "emergencyPhone": "+593987654321"
+  },
+  "student3": {
+    "firstName": "Pedro",
+    "lastName": "Yungan",
+    "age": 21,
+    "emailAddress": "pedroyungan@example.com",
+    "phoneNumber": "+593986753091",
+    "studentStatus": "active",
+    "emergencyName": "María Yungan",
+    "emergencyPhone": "+593981234567"
+  },
+  "student4": {
+    "firstName": "Lucía",
+    "lastName": "Ramirez",
+    "age": 23,
+    "emailAddress": "luciaramirez@example.com",
+    "phoneNumber": "+593981234567",
+    "studentStatus": "passive",
+    "emergencyName": "Juan Ramirez",
+    "emergencyPhone": "+593984567890"
+  },
+  "student5": {
+    "firstName": "Carlos",
+    "lastName": "Villacis",
+    "age": 24,
+    "emailAddress": "carlosvillacis@example.com",
+    "phoneNumber": "+593987654321",
+    "studentStatus": "active",
+    "emergencyName": "María Villacis",
+    "emergencyPhone": "+593981234567"
+  }
+}

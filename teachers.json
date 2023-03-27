@@ -1,0 +1,71 @@
+{
+    "teachers": [
+      {
+        "firstName": "Maria",
+        "lastName": "Garcia",
+        "age": 35,
+        "emailAddress": "maria.garcia@example.com",
+        "phoneNumber": "+593992345678",
+        "availability": [
+          {
+            "dayOfWeek": "Monday",
+            "hoursAvailable": [
+              "10:00 AM",
+              "11:00 AM",
+              "2:00 PM"
+            ]
+          },
+          {
+            "dayOfWeek": "Wednesday",
+            "hoursAvailable": [
+              "9:00 AM",
+              "1:00 PM",
+              "3:00 PM"
+            ]
+          },
+          {
+            "dayOfWeek": "Friday",
+            "hoursAvailable": [
+              "10:00 AM",
+              "11:00 AM",
+              "2:00 PM"
+            ]
+          }
+        ]
+      },
+      {
+        "firstName": "Pedro",
+        "lastName": "Martinez",
+        "age": 42,
+        "emailAddress": "pedro.martinez@example.com",
+        "phoneNumber": "+593992345679",
+        "availability": [
+          {
+            "dayOfWeek": "Tuesday",
+            "hoursAvailable": [
+              "1:00 PM",
+              "3:00 PM",
+              "4:00 PM"
+            ]
+          },
+          {
+            "dayOfWeek": "Thursday",
+            "hoursAvailable": [
+              "10:00 AM",
+              "11:00 AM",
+              "2:00 PM"
+            ]
+          },
+          {
+            "dayOfWeek": "Saturday",
+            "hoursAvailable": [
+              "9:00 AM",
+              "11:00 AM",
+              "1:00 PM"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  

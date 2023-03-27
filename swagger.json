@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "My API",
-    "description": "Temple API",
+    "description": "My First API",
     "version": "1.0.0"
   },
   "host": "lesson04-swagger.onrender.com",
@@ -18,7 +18,7 @@
         "responses": {}
       }
     },
-    "/contacts/": {
+    "/students/": {
       "get": {
         "description": "",
         "produces": [
@@ -46,13 +46,19 @@
                 "lastName": {
                   "example": "any"
                 },
-                "email": {
+                "age": {
                   "example": "any"
                 },
-                "favoriteColor": {
+                "emailAddress": {
                   "example": "any"
                 },
-                "birthday": {
+                "phoneNumber": {
+                  "example": "any"
+                },
+                "studentStatus": {
+                  "example": "any"
+                },
+                "emergencyName": {
                   "example": "any"
                 }
               }
@@ -69,7 +75,7 @@
         }
       }
     },
-    "/contacts/{id}": {
+    "/students/{id}": {
       "get": {
         "description": "",
         "produces": [
@@ -110,13 +116,19 @@
                 "lastName": {
                   "example": "any"
                 },
-                "email": {
+                "age": {
                   "example": "any"
                 },
-                "favoriteColor": {
+                "emailAddress": {
                   "example": "any"
                 },
-                "birthday": {
+                "phoneNumber": {
+                  "example": "any"
+                },
+                "studentStatus": {
+                  "example": "any"
+                },
+                "emergencyName": {
                   "example": "any"
                 }
               }
