@@ -54,27 +54,33 @@ POST https://lesson05-javier-espinoza.onrender.com/students HTTP/1.1
 content-type: application/json
 
 {
-    "firstName":"Mark",
-    "lastName":"Yuhan",
-    "email":"yuhan@test.com",
-    "favoriteColor":"Light Green",
-    "birthday":"03/05/1985"
+      "firstName": "Juan",
+    "lastName": "Yánez",
+    "age": 28,
+    "emailAddress": "juan@test.com",
+    "phoneNumber": "+593981234577",
+    "studentStatus": "active",
+    "emergencyName": "Mónica Gavilanes",
+    "emergencyPhone": "+59398454690"
 }
 
 
 ### PUT contact
-PUT https://lesson05-javier-espinoza.onrender.com/students/64128bec9510fce92b27240c HTTP/1.1
+PUT https://lesson05-javier-espinoza.onrender.com/students/641f1844176c3933a021628c HTTP/1.1
 content-type: application/json
 
 {
-    "firstName":"Mark",
-    "lastName":"Yuhan",
-    "email":"yuhanmarkn@test.com",
-    "favoriteColor":"Light Blue",
-    "birthday":"03/05/1985"
+  "firstName": "Lucía",
+    "lastName": "Ramirez",
+    "age": 23,
+    "emailAddress": "luciaramirez@example.com",
+    "phoneNumber": "+593981234567",
+    "studentStatus": "passive",
+    "emergencyName": "Juan Ramirez",
+    "emergencyPhone": "+593984567890"
 }
 
 
 
 ### DELETE contact
-DELETE https://lesson05-javier-espinoza.onrender.com/students/6413e9ddc2bf1561a04520bb 
+DELETE https://lesson05-javier-espinoza.onrender.com/students/641f1844176c3933a021628c
