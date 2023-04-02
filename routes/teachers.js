@@ -5,12 +5,12 @@ const teachersController = require('../controllers/teachers');
 
 router.get('/', teachersController.getAll);
 
-router.get('/:id', teachersController.getSingle);
+router.get('/:emailAddress', teachersController.getTeacher);
 
 router.post('/', teachersController.createTeacher);
 
-router.put('/:id', teachersController.updateTeacher);
+// router.put('/:emailAddress', teachersController.updateTeacher);
 
-router.delete('/:id', teachersController.deleteTeacher);
+// router.delete('/:emailAddres', teachersController.deleteTeacher);
 
 module.exports = router;

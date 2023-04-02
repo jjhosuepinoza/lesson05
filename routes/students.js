@@ -5,12 +5,12 @@ const studentsController = require('../controllers/students');
 
 router.get('/', studentsController.getAll);
 
-router.get('/:id', studentsController.getSingle);
+router.get('/:emailAddress', studentsController.getStudent);
 
 router.post('/', studentsController.createStudent);
 
-router.put('/:id', studentsController.updateStudent);
+// router.put('/:emailAddress', studentsController.updateStudent);
 
-router.delete('/:id', studentsController.deleteStudent);
+// router.delete('/:emailAddress', studentsController.deleteStudent);
 
 module.exports = router;

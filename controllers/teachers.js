@@ -1,82 +1,49 @@
-const mongodb = require('../db/connect');
-const ObjectId = require('mongodb').ObjectId;
-
-const getAll = async (req, res) => {
-  const result = await mongodb.getDb().db().collection('teachers').find();
-  result.toArray().then((lists) => {
-    res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(lists);
-  });
-};
-
-const getSingle = async (req, res) => {
-  const userId = new ObjectId(req.params.id);
-  const result = await mongodb.getDb().db().collection('teachers').find({ _id: userId });
-  result.toArray().then((lists) => {
-    res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(lists[0]);
-  });
-};
-
-const createTeacher = async (req, res) => {
-  const teacher = {
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    age: req.body.age,
-    emailAddress: req.body.emailAddress,
-    phoneNumber: req.body.phoneNumber,
-    availability: req.body.availability,
+const db = require('../models');
+const Teacher = db.teacher;
 
 
-  };
-  const response = await mongodb.getDb().db().collection('teachers').insertOne(teacher);
-  if (response.acknowledged) {
-    res.status(201).json(response);
-  } else {
-    res.status(500).json(response.error || 'Some error occurred while creating the teacher.');
+exports.createTeacher = (req, res) => {
+  // Validate request
+  if (!req.body.emailAddress|| !req.body.lastName) {
+    res.status(400).send({ message: 'Content can not be empty!' });
+    return;
   }
+
+  const teacher = new Teacher(req.body);
+  teacher
+    .save()
+    .then((data) => {
+      console.log(data);
+      res.status(201).send(data);
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: err.message || 'Some error occurred while creating the teacher.'
+      });
+    });
 };
 
-const updateTeacher = async (req, res) => {
-  const userId = new ObjectId(req.params.id);
-  // be aware of updateOne if you only want to update specific fields
-  const teacher = {
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    age: req.body.age,
-    emailAddress: req.body.emailAddress,
-    phoneNumber: req.body.phoneNumber,
-    availability: req.body.availability,
-    
-  };
-  const response = await mongodb
-    .getDb()
-    .db()
-    .collection('teachers')
-    .replaceOne({ _id: userId }, teacher);
-  console.log(response);
-  if (response.modifiedCount > 0) {
-    res.status(204).send();
-  } else {
-    res.status(500).json(response.error || 'Some error occurred while updating the teacher.');
-  }
+exports.getAll = (req, res) => {
+  Teacher.find({})
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: err.message || 'Some error occurred while retrieving teachers.'
+      });
+    });
 };
 
-const deleteTeacher = async (req, res) => {
-  const userId = new ObjectId(req.params.id);
-  const response = await mongodb.getDb().db().collection('teachers').remove({ _id: userId }, true);
-  console.log(response);
-  if (response.deletedCount > 0) {
-    res.status(204).send();
-  } else {
-    res.status(500).json(response.error || 'Some error occurred while deleting the contact.');
-  }
-};
-
-module.exports = {
-  getAll,
-  getSingle,
-  createTeacher,
-  updateTeacher,
-  deleteTeacher
+exports.getTeacher = (req, res) => {
+  const emailAddress = req.params.emailAddress;
+  Teacher.find({ emailAddress: emailAddress })
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: err.message || 'Some error occurred while retrieving teachers.'
+      });
+    });
 };
