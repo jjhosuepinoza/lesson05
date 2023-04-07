@@ -12,10 +12,10 @@ POST http://localhost:5050/students
 content-type: application/json
 
 {
-    "firstName": "Juan",
-    "lastName": "Yánez",
-    "age": 28,
-    "emailAddress": "juan@test.com",
+    "firstName":"" ,
+    "lastName":"5k8l" ,
+    "age":28,
+    "emailAddress": "juantestcom",
     "phoneNumber": "+593981234577",
     "studentStatus": "active",
     "emergencyName": "Mónica Gavilanes",
