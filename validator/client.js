@@ -1,33 +1,36 @@
-const { check } = require('express-validator') //TODO <---
-const { validateResult } = require('../validator/validateHelper')
+const { check, validationResult } = require('express-validator');
 
-const validateCreate = [ //TODO:name, age, email
-    check('firstName')
-        .exists()
-        .not()
-        .isEmpty()
-        .withMessage('Write your name, please.')
-        // .not()
-        // .isNumeric()
-        .matches(/^[A-Za-z\s]+$/)
-        .withMessage('Name must not conatain numbers or symbols.'),
+const validateCreate = [  check('firstName')    .exists()    .not()    .isEmpty()    .withMessage('4001: Write your name, please.')    .matches(/^[A-Za-z\s]+$/)
+    .withMessage('4002: Name must not contain numbers or symbols.'),
 
-        check('lastName')
-        .exists()
-        .not()
-        .isEmpty()
-        .withMessage('Write your last name, please.')
-        // .not()
-        // .isNumeric()
-        .matches(/^[A-Za-z\s]+$/)
-        .withMessage('Name must not conatain numbers or symbols.'),
+  check('lastName')
+    .exists()
+    .not()
+    .isEmpty()
+    .withMessage('4003: Write your last name, please.')
+    .matches(/^[A-Za-z\s]+$/)
+    .withMessage('4004: Last name must not contain numbers or symbols.'),
+  check('Phone number')
+  .exists()
+  .isNumeric(),
+  check('emailAddress')
+    .exists()
+    .isEmail()
+    .withMessage('4005: Please provide a valid email address.'),
 
-    check('emailAddress')
-        .exists()
-        .isEmail(),
-    (req, res, next) => {
-        validateResult(req, res, next)
+  (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      res.status(400).json({ code: '4000', message: 'Bad Request', errors: errors.array() });
+    } else {
+      next();
     }
-]
+  }
+];
 
-module.exports = { validateCreate }
+const errorHandler = (err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ code: '5000', message: 'Internal Server Error' });
+};
+
+module.exports = { validateCreate, errorHandler };
